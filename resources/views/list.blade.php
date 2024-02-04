@@ -85,7 +85,7 @@
 
    playButtons.forEach(function (button) {
        new bootstrap.Tooltip(button);
-       button.innerHTML = '<img src="/icons/file-play-fill.svg" alt="Play" style="width: 1.5em; height: 1.5em;">';
+       button.innerHTML = '<img src="/public/icons/file-play-fill.svg" alt="Play" style="width: 1.5em; height: 1.5em;">';
        button.addEventListener('click', function () {
            const songId = button.getAttribute('data-id');
            playSong(songId);
@@ -94,16 +94,16 @@
 
    pauseButtons.forEach(function (button) {
        new bootstrap.Tooltip(button);
-       button.innerHTML = '<img src="/icons/pause-btn-fill.svg" alt="Puase" style="width: 1.5em; height: 1.5em;">';
+       button.innerHTML = '<img src="/public/icons/pause-btn-fill.svg" alt="Puase" style="width: 1.5em; height: 1.5em;">';
        button.addEventListener('click', function () {
            pauseSong();
        });
    });
 
-   stopButton.innerHTML = '<img src="/icons/pause-btn-fill.svg" alt="Stop">';
-   nextButton.innerHTML = '<img src="/icons/arrow-right-square-fill.svg" alt="Next">';
-   prevButton.innerHTML = '<img src="/icons/arrow-left-square-fill.svg" alt="Previous">';
-   randomButton.innerHTML = '<img src="/icons/shuffle.svg" alt="Random">';
+   stopButton.innerHTML = '<img src="/public/icons/pause-btn-fill.svg" alt="Stop">';
+   nextButton.innerHTML = '<img src="/public/icons/arrow-right-square-fill.svg" alt="Next">';
+   prevButton.innerHTML = '<img src="/public/icons/arrow-left-square-fill.svg" alt="Previous">';
+   randomButton.innerHTML = '<img src="/public/icons/shuffle.svg" alt="Random">';
    
    function playSong(id) {
     fetch(`/music/play/${id}`)
