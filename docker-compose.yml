@@ -1,0 +1,42 @@
+version: "3"
+
+services:
+    laravel-docker:
+        container_name: horizon_labs
+        build:
+            context: .
+            args:
+                - APP_ENV=${APP_ENV}
+        environment:
+            - APP_ENV=${APP_ENV}
+            - CONTAINER_ROLE=${APP_ENV}
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        ports:
+            - 8000:80
+        depends_on:
+            - mysql
+
+    mysql:
+        container_name: mysql
+        image: mysql:latest
+        environment:
+            MYSQL_DATABASE: music_lab
+            MYSQL_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: root
+        ports:
+            - 3305:3306
+        volumes:
+            - db-data:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin:latest
+        ports:
+            - 9001:80
+        environment:
+            - PMA_ARBITRARY=1
+        depends_on:
+            - mysql
+volumes:
+    db-data: ~

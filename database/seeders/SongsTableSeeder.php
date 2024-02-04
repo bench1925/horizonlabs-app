@@ -15,6 +15,8 @@ class SongsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        info('Seeding songs table...');
+
         $songs = [
             [
                 'artist' => 'Ed Sheeran',
