@@ -88,7 +88,8 @@
        button.innerHTML = '<img src="/public/icons/file-play-fill.svg" alt="Play" style="width: 1.5em; height: 1.5em;">';
        button.addEventListener('click', function () {
            const songId = button.getAttribute('data-id');
-           playSong(songId);
+           currentSongIndex = (songId-1) % songs.length;
+           playSong(songs[currentSongIndex].id);
        });
    });
 
