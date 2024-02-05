@@ -40,14 +40,18 @@ The application and its main functionalities.
 
 ## Setup
 
--   Locahost using Xampp, start apache and mysql
+-   Install Docker
 -   Change the .env file based on credentials used
--   Run "php artisan migrate"
--   Run "php artisan db:seed --class=SongsTableSeeder"
--   Run "php artisan serve"
--   Go to Browser, type the link "http://localhost:8000/login",
-    email: bhen@yahoo.com
-    password: 123456
+-   See Makefile as reference in root directory of the project
+-   Steps to run the program, in terminal:
+    -   Run "make build"
+    -   Run "make up"
+    -   Run "make migrate"
+    -   Run "make seed"
+    -   Run "make serve"
+-   Go to Browser, type the link "http://localhost:8000/login"
+    -   click register - input necessary fields
+    -   example: email: bhen@yahoo.com, password: 123456
 
 ## Design Decisions
 
